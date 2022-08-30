@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react'
 import Player from '../components/description/Player'
 import VideoDescription from '../components/description/VideoDescription'
-import Footer from '../components/Footer'
+
 import RelatedVideoList from '../components/List/RelatedVideoList'
-import Navbar from '../components/Navbar/Navbar'
+
 
 const Video = () => {
     return (
