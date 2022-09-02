@@ -11,8 +11,8 @@ export const getVideos = async (tags, search) => {
         queryString += `&q=${search}`
     }
     //  console.log(queryString)
+    const response = await axios.get(`/videos?${queryString}`)
     //  const response = await axios.get(`/videos?${queryString}`)
-    const response = await axios.get(`?${queryString}`)
     //  console.log(response.data)
 
     // console.log(response)
@@ -21,5 +21,5 @@ export const getVideos = async (tags, search) => {
 
     }
 
-    return response.data.videos
+    return response.data
 }
