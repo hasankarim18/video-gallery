@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { getVideos } from './VideosApi'
+import { getAuthorVideos } from './authorSliceApi'
 
 // initial state 
 
@@ -10,32 +10,32 @@ const initialState = {
     error: ''
 }
 
-export const fetchVideos = createAsyncThunk('videos/fetchVideos', async ({ tags, search, authorId }) => {
-    //    console.log(authorId)
+export const fetchAuthorVideos = createAsyncThunk('authorFilter/fetchVideos', async ({ tags, search, authorId }) => {
+    console.log(authorId)
 
-    const videos = await getVideos(tags, search, authorId)
+    const videos = await fetchAuthorVideos(tags, search, authorId)
 
     return videos
 
 })
 
-const videoSlice = createSlice({
+const authorVideoSlice = createSlice({
     name: 'videos',
     initialState: initialState,
     extraReducers: (builder) => {
         builder
-            .addCase(fetchVideos.pending, (state) => {
+            .addCase(fetchAuthorVideos.pending, (state) => {
                 state.isError = false
                 state.error = ''
                 state.isLoading = true
             })
-            .addCase(fetchVideos.fulfilled, (state, action) => {
+            .addCase(fetchAuthorVideos.fulfilled, (state, action) => {
 
                 state.isLoading = false
                 state.videos = action.payload
 
             })
-            .addCase(fetchVideos.rejected, (state, action) => {
+            .addCase(fetchAuthorVideos.rejected, (state, action) => {
                 state.isLoading = false
                 state.videos = []
                 state.isError = true
@@ -45,6 +45,6 @@ const videoSlice = createSlice({
 
 })
 
-const vidoesReducer = videoSlice.reducer
+const authorVideoReducer = authorVideoSlice.reducer
 
-export default vidoesReducer
+export default authorVideoReducer

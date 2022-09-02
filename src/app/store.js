@@ -5,6 +5,7 @@ import vidoeReducer from '../features/Video/VideoSlice';
 import relatedVideosReducer from '../features/relatedVideos/relatedVideosSlice';
 import filterReducer from '../features/filter/filterSlice';
 import likeUnlikeReducer from '../features/likeUnlike/likeUnlikeFeature';
+import authorVideoReducer from '../features/authorFilter/authorSlice';
 
 export const store = configureStore({
   reducer: {
@@ -13,7 +14,8 @@ export const store = configureStore({
     video: vidoeReducer,
     relatedVideos: relatedVideosReducer,
     filter: filterReducer,
-    status: likeUnlikeReducer
+    status: likeUnlikeReducer,
+    author: authorVideoReducer
 
   },
 });

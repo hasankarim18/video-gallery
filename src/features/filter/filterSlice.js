@@ -6,10 +6,9 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
     tags: [],
     search: '',
+    // authorId: 0
 
 }
-
-
 
 const filterSlice = createSlice({
     name: 'video',
@@ -31,14 +30,18 @@ const filterSlice = createSlice({
         resetSearch: (state) => {
             state.search = ''
             state.tags = []
-
+            state.authorId = 0
+        },
+        authorSelected: (state, action) => {
+            //  state.search = ''
+            //  state.tags = []
+            state.authorId = action.payload
         }
     }
-
 })
 
 const filterReducer = filterSlice.reducer
 
-export const { tagSelected, tagRemoved, searched, resetSearch } = filterSlice.actions
+export const { tagSelected, tagRemoved, searched, resetSearch, authorSelected } = filterSlice.actions
 
 export default filterReducer

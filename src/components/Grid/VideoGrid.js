@@ -10,14 +10,14 @@ const VideoGrid = () => {
     const isLoading = useSelector(state => state.videos.isLoading)
     const isError = useSelector(state => state.videos.isError)
     const error = useSelector(state => state.videos.error)
-    const { tags, search } = useSelector(state => state.filter)
+    const { tags, search, authorId } = useSelector(state => state.filter)
 
 
     const allVideo = videos.videos
 
     useEffect(() => {
-        dispatch(fetchVideos({ tags, search }))
-    }, [dispatch, tags, search])
+        dispatch(fetchVideos({ tags, search, authorId }))
+    }, [dispatch, tags, search, authorId])
 
     // decide what to do
 

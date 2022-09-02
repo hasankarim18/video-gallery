@@ -1,6 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { fetchVideos } from '../../features/Videos/VideosSlice'
+import { useSelector, useDispatch } from 'react-redux'
+import { resetSearch, authorSelected } from '../../features/filter/filterSlice'
+import { fetchAuthorVideos } from '../../features/authorFilter/authorSlice'
+
+
 const VideoGridItem = ({ video = {} }) => {
+    const { authorId } = useSelector(state => state.filter)
+
+    const dispatch = useDispatch()
+    // console.log(video)
+
+    const authorVideoHandler = () => {
+
+        dispatch(fetchVideos({ tags: [], search: '', authorId: video.authorId }))
+        dispatch(authorSelected(video.authorId))
+    }
+
+
     //   console.log(props)
     const { thumbnail, title, views, author, id, avatar, date } = video
     return (
@@ -29,7 +47,8 @@ const VideoGridItem = ({ video = {} }) => {
                                 {title}
                             </p>
                         </a>
-                        <a className="text-gray-400 text-xs mt-2 hover:text-gray-600" href="#">
+                        <a onClick={authorVideoHandler}
+                            className="text-gray-400 text-xs mt-2 hover:text-gray-600" href="#">
                             {author}
                         </a>
                         <p className="text-gray-400 text-xs mt-1">

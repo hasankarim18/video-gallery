@@ -1,6 +1,8 @@
 import axios from '../../utils/axios'
 
-export const getVideos = async (tags, search, authorId) => {
+export const getAuthorVideos = async (tags, search, authorId) => {
+
+    console.log('tags', tags)
 
     let queryString = ''
     if (tags.length > 0) {
@@ -15,9 +17,8 @@ export const getVideos = async (tags, search, authorId) => {
         queryString += `&authorId_like=${authorId}`
     }
 
-    // console.log(queryString)
     //  console.log(queryString)
-    const response = await axios.get(`/videos?${queryString}&_limit=4`)
+    const response = await axios.get(`/videos?${queryString}`)
 
     if (response.status !== 200 && response.statusText !== 'OK') {
         throw new Error(`Some thing went wrong!!! ${response.statusText}`)
