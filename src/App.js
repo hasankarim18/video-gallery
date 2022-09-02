@@ -8,6 +8,7 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home';
 import Video from './pages/Video';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import AddVideo from './pages/AddVideo';
 
 
 
@@ -19,7 +20,8 @@ function App() {
       react-rtk
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/videos/:videoId' element={<Video />} />
+        <Route path="/videos/:videoId" element={<Video />} />
+        {/* <Route path="/add-video" element={<AddVideo />} /> */}
       </Routes>
       <Footer />
     </BrowserRouter>
