@@ -8,7 +8,7 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home';
 import Video from './pages/Video';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import AddVideo from './pages/AddVideo';
+
 
 
 

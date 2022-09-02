@@ -17,7 +17,7 @@ export const getVideos = async (tags, search, authorId) => {
 
     // console.log(queryString)
     //  console.log(queryString)
-    const response = await axios.get(`/videos?${queryString}`)
+    const response = await axios.get(`/videos?${queryString}&_limit=4`)
 
     if (response.status !== 200 && response.statusText !== 'OK') {
         throw new Error(`Some thing went wrong!!! ${response.statusText}`)

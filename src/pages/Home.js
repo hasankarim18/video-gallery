@@ -11,7 +11,7 @@ const Home = () => {
 
             <Tags />
             <VideoGrid />
-            <Pagination />
+            {/* <Pagination /> */}
 
         </Fragment>
     )
