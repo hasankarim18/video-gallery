@@ -67,8 +67,6 @@ const VideoGrid = () => {
                         {/* <!-- single video --> */}
                         {content}
 
-                        {/* <!-- error section */}
-                        {/* <div className="col-span-12">some error happened</div> --> */}
                     </div>
                 </section>
             </section>

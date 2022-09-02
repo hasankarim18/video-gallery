@@ -1,12 +1,19 @@
 import React from 'react'
 import LikeUnlike from './LikeUnlike'
 
+
 const VideoDescription = ({ video }) => {
     const { title, description, date, id } = video
 
+
+
+
+
     return (
         <div>
-            <h1 className="text-lg font-semibold tracking-tight text-slate-800">
+            <h1
+                className="text-lg font-semibold tracking-tight text-slate-800">
+
                 {title}
             </h1>
             <div className="pb-4 flex items-center space-between border-b">

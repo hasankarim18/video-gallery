@@ -1,12 +1,29 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { fetchVideos } from '../../features/Videos/VideosSlice'
+import { useSelector, useDispatch } from 'react-redux'
+import { authorSelected } from '../../features/filter/filterSlice'
+import { useMatch, useNavigate } from 'react-router-dom'
 
 
 
 const RelatedVideoListItem = (props) => {
     //   console.log(props.video)
+    const dispatch = useDispatch()
+    const match = useMatch('/')
+    const navigate = useNavigate()
+    const { title, views, author, date, duration, id, thumbnail, authorId } = props.video
 
-    const { title, views, author, date, duration, id, thumbnail } = props.video
+
+
+
+    const authorVideoHandler = (id) => {
+        if (!match) {
+            navigate('/')
+        }
+        dispatch(fetchVideos({ tags: [], search: '', authorId: id }))
+        dispatch(authorSelected(authorId))
+    }
 
     return (
         <div className="w-full flex flex-row gap-2 mb-4">
@@ -28,7 +45,7 @@ const RelatedVideoListItem = (props) => {
                         {title}
                     </p>
                 </Link>
-                <a className="text-gray-400 text-xs mt-2 hover:text-gray-600" href="#">
+                <a onClick={() => authorVideoHandler(authorId)} className="text-gray-400 text-xs mt-2 hover:text-gray-600" href="#">
                     {author}
                 </a>
                 <p className="text-gray-400 text-xs mt-1">

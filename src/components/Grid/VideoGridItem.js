@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { fetchVideos } from '../../features/Videos/VideosSlice'
 import { useSelector, useDispatch } from 'react-redux'
-import { resetSearch, authorSelected } from '../../features/filter/filterSlice'
+import { authorSelected } from '../../features/filter/filterSlice'
 import { fetchAuthorVideos } from '../../features/authorFilter/authorSlice'
 
 
