@@ -11,7 +11,7 @@ const RelatedVideoList = ({ currentVideoId, tags }) => {
     const dispatch = useDispatch()
     const location = useLocation()
     const { videoId } = useParams()
-    console.log('videoId', videoId)
+    //   console.log('videoId', videoId)
 
 
     const alldata = useSelector(state => state.relatedVideos)
@@ -23,7 +23,7 @@ const RelatedVideoList = ({ currentVideoId, tags }) => {
     // console.log(relatedVideos)
 
     //  console.log(tags)
-    console.log('current use value', currentVideoId)
+    //console.log('current use value', currentVideoId)
 
     useEffect(() => {
         //  console.log(currentVideoId)

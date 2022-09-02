@@ -11,7 +11,7 @@ export const getVideos = async (tags, search) => {
         queryString += `&q=${search}`
     }
     //  console.log(queryString)
-    const response = await axios.get(`/videos?${queryString}`)
+    const response = await axios.get(`/videos?${queryString}&_limit=4`)
     //  const response = await axios.get(`/videos?${queryString}`)
     //  console.log(response.data)
 

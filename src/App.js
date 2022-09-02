@@ -17,7 +17,6 @@ function App() {
 
     <BrowserRouter>
       <Navbar />
-      react-rtk
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path="/videos/:videoId" element={<Video />} />
