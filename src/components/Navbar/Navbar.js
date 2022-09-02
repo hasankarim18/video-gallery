@@ -4,7 +4,12 @@ import logImg from '../../assets/lws.svg'
 import searchIcon from '../../assets/search.svg'
 import { Link } from 'react-router-dom'
 
+
+
 const Navbar = () => {
+
+
+
     return (
         <nav className="bg-slate-100 shadow-md">
             <div

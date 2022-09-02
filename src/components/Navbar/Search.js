@@ -5,6 +5,7 @@ import { useMatch, useNavigate } from 'react-router-dom'
 
 const Search = () => {
     const { search } = useSelector(state => state.filter)
+
     const [input, setInput] = useState(search)
     const dispatch = useDispatch()
     const match = useMatch('/')
@@ -18,7 +19,6 @@ const Search = () => {
         if (!match) {
             navigate('/')
         }
-
     }
 
     return (

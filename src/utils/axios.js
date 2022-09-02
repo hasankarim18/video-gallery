@@ -2,8 +2,10 @@ import axios from 'axios'
 
 
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:9000'
-    //  baseURL: 'http://localhost:9001/videos/'
+    //  baseURL: 'http://localhost:9005'
+    baseURL: 'https://lws18.herokuapp.com/'
+
+
 });
 
 export default axiosInstance 
